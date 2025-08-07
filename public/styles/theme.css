@@ -1,0 +1,414 @@
+/* Theme Variables */
+:root {
+  --bg-main: #ffffff;
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f8f8;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --toyota-red: #d2232a;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --hover-bg: #f0f0f0;
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-text: #333333;
+  --button-text: #ffffff;
+  --accent-color: #d2232a;
+  --sidebar-width: 70px;
+  --header-height: 60px;
+  --footer-height: auto;
+  --footer-bg: #f8f8f8;
+  --footer-text: #666666;
+  --footer-border: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --bg-main: #121212;
+  --bg-primary: #1e1e1e;
+  --bg-secondary: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --toyota-red: #ff4d4d;
+  --success-color: #2ecc71;
+  --danger-color: #e74c3c;
+  --hover-bg: #2a2a2a;
+  --card-bg: #1e1e1e;
+  --input-bg: #2d2d2d;
+  --input-text: #ffffff;
+  --button-text: #ffffff;
+  --accent-color: #ff4d4d;
+  --footer-bg: #1e1e1e;
+  --footer-text: #b3b3b3;
+  --footer-border: #333333;
+}
+
+/* Base Styles */
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-y: auto;
+  display: flex; /* Ensure body is a flex container */
+  flex-direction: column; /* Stack children vertically */
+}
+
+body::-webkit-scrollbar,
+main::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+main {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Main Content Area */
+main {
+  background-color: var(--bg-main);
+  margin-left: var(--sidebar-width);
+  padding-top: var(--header-height);
+  width: calc(100% - var(--sidebar-width));
+  transition: background-color 0.3s ease;
+  flex: 1; /* Allow main to grow and fill available space */
+  display: flex;
+  flex-direction: column; /* Ensure children stack vertically */
+}
+
+/* Header with Theme Toggle */
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: var(--sidebar-width);
+  height: var(--header-height);
+  background-color: var(--bg-primary);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 2rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--sidebar-width);
+  height: 100vh;
+  background-color: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar-nav button {
+  color: var(--text-primary);
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.sidebar-nav button:hover {
+  background-color: var(--hover-bg);
+}
+
+.sidebar-nav button.active {
+  background-color: var(--toyota-red);
+  color: var(--button-text);
+}
+
+/* Cards and Containers */
+.card,
+.action-card,
+.settings-section,
+.welcome-card {
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Content Containers */
+.dashboard-container,
+.settings-container,
+.register-container,
+.teller-container {
+  background-color: var(--bg-main);
+  transition: background-color 0.3s ease;
+  flex: 1; /* Ensure these containers grow to fill space */
+}
+
+/* Search Container */
+.search-container {
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.search-box input {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: var(--toyota-red);
+  box-shadow: 0 0 0 2px rgba(210, 35, 42, 0.1);
+}
+
+/* Tables */
+table {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+  transition: all 0.3s ease;
+}
+
+th {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+}
+
+td {
+  border-bottom: 1px solid var(--border-color);
+}
+
+tr:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Forms */
+input,
+select,
+textarea {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--toyota-red);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(210, 35, 42, 0.1);
+}
+
+/* Buttons */
+button {
+  transition: all 0.3s ease;
+}
+
+button.primary {
+  background-color: var(--toyota-red);
+  color: var(--button-text);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  width: 40px;
+  height: 40px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--hover-bg);
+}
+
+.theme-toggle i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover i {
+  transform: rotate(15deg);
+}
+
+/* Footer */
+footer {
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  border-top: 1px solid var(--footer-border);
+  padding: 0.5rem 0;
+  margin: 0;
+  width: 100vw;
+  position: relative;
+  left: calc(-1 * var(--sidebar-width));
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 0;
+  padding: 0;
+}
+
+.footer-section {
+  min-width: 30px;
+  padding: 0 0.1rem;
+}
+
+.footer-section h4 {
+  color: var(--toyota-red);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.3rem;
+}
+
+.footer-section ul li a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: var(--toyota-red);
+}
+
+.footer-section p {
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+}
+
+.footer-section.social {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex: 0 1 auto;
+}
+
+.footer-section.social a {
+  font-size: 1rem;
+  color: var(--footer-text);
+  transition: color 0.3s ease;
+}
+
+.footer-section.social a:hover {
+  color: var(--toyota-red);
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.75rem;
+  margin: 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--footer-border);
+  color: #aaa;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  :root {
+    --sidebar-width: 60px;
+  }
+
+  .content-container {
+    padding: 1rem;
+  }
+
+  footer {
+    width: 100vw;
+    left: calc(-1 * var(--sidebar-width));
+    margin: 0;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 0;
+    padding: 0 1rem;
+    margin: 0;
+  }
+
+  .footer-section {
+    flex: 1 1 120px;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .footer-section.social {
+    justify-content: center;
+  }
+}
+
+/* Update specific dark theme styles */
+[data-theme="dark"] .welcome-card {
+  background-color: var(--bg-primary);
+  box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+[data-theme="dark"] .welcome-card h1 {
+  color: var(--toyota-red);
+}
+
+[data-theme="dark"] .welcome-card p {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .search-container {
+  background-color: var(--bg-primary);
+}
+
+[data-theme="dark"] .search-box input {
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .search-box input::placeholder {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .search-box button {
+  background-color: var(--toyota-red);
+}

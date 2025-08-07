@@ -1,0 +1,34 @@
+<!-- Sidebar Component -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <img src="images/watermark.png" alt="Toyota Logo" class="card-logo">
+  </div>
+  <nav class="sidebar-nav">
+    <button onclick="window.location.href='teller.html'" id="homeBtn" data-tooltip="Dashboard">
+      <i class="fas fa-th-large"></i>
+    </button>
+    <button onclick="window.location.href='register.html'" id="registerBtn" data-tooltip="New Customer">
+      <i class="fas fa-user-plus"></i>
+    </button>
+    <button onclick="showPage('manage')" id="manageBtn" data-tooltip="Transactions">
+      <i class="fas fa-credit-card"></i>
+    </button>
+    <button onclick="showReports()" id="reportsBtn" data-tooltip="Reports">
+      <i class="fas fa-chart-bar"></i>
+    </button>
+    <button onclick="showSettings()" id="settingsBtn" data-tooltip="Settings">
+      <i class="fas fa-cog"></i>
+    </button>
+  </nav>
+</aside>
+
+<!-- Search Box Component -->
+<div class="search-container">
+  <div class="search-box">
+    <input type="text" id="globalSearch" placeholder="Search customers, transactions, or vehicles...">
+    <button onclick="performGlobalSearch()">
+      <i class="fas fa-search"></i>
+      Search
+    </button>
+  </div>
+</div> 

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Toyota Loyalty Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .settings-container {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .settings-section {
+            background: var(--bg-primary);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 2rem;
+        }
+
+        .settings-header {
+            margin-bottom: 2rem;
+        }
+
+        .settings-header h1 {
+            color: var(--text-primary);
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        .settings-group {
+            margin-bottom: 2rem;
+        }
+
+        .settings-group h2 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .setting-item:last-child {
+            border-bottom: none;
+        }
+
+        .setting-label {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .setting-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Theme Toggle Switch */
+        .theme-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .theme-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .theme-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--bg-secondary);
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .theme-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .theme-slider {
+            background-color: var(--toyota-red);
+        }
+
+        input:checked + .theme-slider:before {
+            transform: translateX(26px);
+        }
+
+        .theme-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 8px;
+            box-sizing: border-box;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://www.toyota.com/favicon.ico" alt="Toyota Logo">
+            </div>
+            <nav class="sidebar-nav">
+                <button data-tooltip="Dashboard" onclick="window.location.href='/dashboard'">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button data-tooltip="Register Card" onclick="window.location.href='/register'">
+                    <i class="fas fa-id-card"></i>
+                </button>
+                <button data-tooltip="Transactions" onclick="window.location.href='/teller'">
+                    <i class="fas fa-exchange-alt"></i>
+                </button>
+                <button data-tooltip="Reports" onclick="window.location.href='/reports'">
+                    <i class="fas fa-chart-bar"></i>
+                </button>
+                <button class="active" data-tooltip="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <img src="https://www.toyota.com/favicon.ico" alt="Toyota Icon">
+            </div>
+        </aside>
+
+        <div class="main-container">
+            <!-- Header with Theme Toggle -->
+            <header class="header">
+                <button id="theme-toggle" class="theme-toggle" data-tooltip="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </header>
+
+            <!-- Main Content -->
+            <main>
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <div class="settings-header">
+                            <h1>Settings</h1>
+                        </div>
+
+                        <!-- Add other settings sections here -->
+                        <div class="settings-group">
+                            <h2>Account</h2>
+                            <div class="setting-item">
+                                <div>
+                                    <div class="setting-label">Profile</div>
+                                    <div class="setting-description">Manage your account information</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-group">
+                            <h2>Notifications</h2>
+                            <div class="setting-item">
+                                <div>
+                                    <div class="setting-label">Email Notifications</div>
+                                    <div class="setting-description">Manage email preferences</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2024 Toyota Loyalty Card System. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="scripts/theme.js"></script>
+    <script>
+        // Initialize theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+        
+        // Set initial icon based on current theme
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        // Initialize theme and icon
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            updateThemeIcon(currentTheme);
+        });
+
+        // Add click event listener
+        themeToggle.addEventListener('click', () => {
+            const newTheme = toggleTheme();
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
+</html> 

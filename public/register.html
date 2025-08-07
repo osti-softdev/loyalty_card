@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register New Customer - Toyota Loyalty Card</title>
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    .form-group {
+      margin-bottom: 1.8rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: var(--text-primary, #333);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      border: 1px solid var(--border-color, #ccc);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background: var(--input-bg, #fff);
+      color: var(--input-text, #333);
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--toyota-red, #d2232a);
+      box-shadow: 0 0 0 3px rgba(210, 35, 42, 0.1);
+    }
+    .form-preview {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: center;
+    }
+    .loyalty-card {
+      width: 500px;
+      height: 250px;
+      padding: 0.5rem;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/3D_Logo.jpg') no-repeat center center;
+      background-size: cover;
+      border: 2px solid #000;
+      border-radius: 10px;
+      text-align: left;
+      font-family: 'Libre Franklin', sans-serif;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0.8rem;
+      min-height: 90px;
+    }
+    .card-logo {
+      width: 80px;
+      height: 60px;
+      margin-right: 0.75rem;
+      border-radius: 15px;
+    }
+    .card-title {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .card-title h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #fff;
+      text-shadow: 1px 1rem 2px rgba(0, 0, 0, 0.8);
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .card-title span {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      font-family: 'Libre Franklin', sans-serif;
+      white-space: nowrap;
+    }
+    .card-content {
+      display: block;
+      color: #fff;
+      font-size: 1.1rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 400;
+      margin-top: -0.5rem;
+    }
+    .card-content div {
+      margin: 0 0 0.2rem 1rem;
+      line-height: normal;
+    }
+    .card-content strong {
+      font-weight: 700;
+      margin-right: 0.3rem;
+      display: inline;
+      white-space: nowrap;
+    }
+    .card-content span {
+      display: inline;
+      word-break: break-word;
+      white-space: normal;
+    }
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid var(--bg-secondary, #f5f5f5);
+      border-top: 5px solid var(--toyota-red, #d2232a);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      min-height: 100vh;
+      margin: 0;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .dashboard-container {
+      box-sizing: border-box;
+      padding: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      animation: fadeIn 0.5s ease-out;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .registration-form {
+      background: var(--bg-primary, #fff);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px var(--shadow-color, rgba(0, 0, 0, 0.1));
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+    .registration-form h2 {
+      color: var(--text-primary, #333);
+      margin-bottom: 2rem;
+    }
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .form-actions button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .preview-btn, .submit-btn {
+      background: var(--toyota-red, #d2232a);
+      color: var(--button-text, #fff);
+    }
+    .preview-btn:hover, .submit-btn:hover {
+      opacity: 0.9;
+    }
+    .search-box {
+      display: flex;
+      gap: 0.75rem;
+      background: var(--bg-primary, #fff);
+      padding: 0.75rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px var(--shadow-color, rgba(0, 0, 0, 0.1));
+      height: 60px;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+    .search-box input {
+      flex: 1;
+      height: 100%;
+      padding: 0 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color, #ccc);
+      background: var(--input-bg, #fff);
+      color: var(--input-text, #333);
+      font-size: 1rem;
+      min-width: 0;
+      width: 100%;
+    }
+    .search-box button {
+      height: 100%;
+      padding: 0 1.5rem;
+      background-color: var(--toyota-red, #d2232a);
+      color: var(--button-text, #fff);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      min-width: 120px;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    .search-box button:hover {
+      background-color: #ff6666;
+      transform: translateY(-1px);
+    }
+    .search-box button i {
+      font-size: 1.1rem;
+    }
+    @media screen and (max-width: 768px) {
+      .main-container { width: 100%; }
+      .loyalty-card { width: 100%; max-width: 400px; }
+      .registration-form { max-width: 100%; }
+      .card-title h3 { font-size: 1.5rem; }
+      .card-title span { font-size: 1.1rem; }
+      .card-header { min-height: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="https://www.toyota.com/favicon.ico" alt="Toyota Logo">
+    </div>
+    <nav class="sidebar-nav">
+      <button data-tooltip="Dashboard" onclick="window.location.href='/dashboard'">
+        <i class="fas fa-home"></i>
+      </button>
+      <button class="active" data-tooltip="Register Card" onclick="window.location.href='/register'">
+        <i class="fas fa-id-card"></i>
+      </button>
+      <button data-tooltip="Transactions" onclick="window.location.href='/teller'">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+      <button data-tooltip="Reports" onclick="window.location.href='/reports'">
+        <i class="fas fa-chart-bar"></i>
+      </button>
+      <button data-tooltip="Settings" onclick="window.location.href='/settings'">
+        <i class="fas fa-cog"></i>
+      </button>
+    </nav>
+  </aside>
+
+  <div class="loading">
+    <div class="loading-spinner"></div>
+  </div>
+
+  <div class="main-container">
+    <header class="header">
+      <button id="theme-toggle" class="theme-toggle" data-tooltip="Toggle Theme">
+        <i class="fas fa-moon"></i>
+      </button>
+    </header>
+
+    <main>
+      <div class="dashboard-container">
+        <div class="search-box">
+          <input type="text" placeholder="Search by card number or customer name...">
+          <button>
+            <i class="fas fa-search"></i>
+            Search
+          </button>
+        </div>
+
+        <div class="registration-form">
+          <h2>Register New Customer</h2>
+          <form id="registerForm">
+            <div class="form-group">
+              <label for="name">Customer Name</label>
+              <input type="text" id="name" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+              <label for="contactNumber">Contact Number</label>
+              <input type="tel" id="contactNumber" placeholder="Enter contact number" required pattern="[0-9]{11}"
+                title="Contact number must be exactly 11 digits">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="Enter email address" required>
+            </div>
+            <div class="form-group">
+              <label for="branchName">Branch Name</label>
+              <select id="branchName" required>
+                <option value="">Select branch</option>
+                <option value="Toyota Cebu City">Toyota Cebu City</option>
+                <option value="Toyota Mandaue North">Toyota Mandaue North</option>
+                <option value="Toyota Mandaue South">Toyota Mandaue South</option>
+                <option value="Toyota Talisay City">Toyota Talisay City</option>
+                <option value="Toyota Lapu-Lapu">Toyota Lapu-Lapu</option>
+                <option value="Toyota Tagbilaran">Toyota Tagbilaran</option>
+                <option value="Toyota Dumaguete City">Toyota Dumaguete City</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vehicleType">Vehicle Type</label>
+              <select id="vehicleType" required>
+                <option value="">Select vehicle type</option>
+                <option value="Toyota Vios">Toyota Vios</option>
+                <option value="Toyota Innova">Toyota Innova</option>
+                <option value="Toyota Fortuner">Toyota Fortuner</option>
+                <option value="Toyota Hilux">Toyota Hilux</option>
+                <option value="Toyota Corolla Cross">Toyota Corolla Cross</option>
+                <option value="Toyota Raize">Toyota Raize</option>
+                <option value="Toyota Avanza">Toyota Avanza</option>
+                <option value="Toyota Rush">Toyota Rush</option>
+                <option value="Toyota Veloz">Toyota Veloz</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group" id="otherVehicleGroup" style="display: none;">
+              <label for="otherVehicleType">Specify Vehicle Type</label>
+              <input type="text" id="otherVehicleType" placeholder="Enter vehicle type">
+            </div>
+            <div class="form-group">
+              <label for="plateNumber">Plate Number</label>
+              <input type="text" id="plateNumber" placeholder="Enter plate number" required pattern="[A-Z0-9 -]+"
+                title="Plate number should contain only uppercase letters, numbers, spaces and hyphens">
+            </div>
+            <div class="form-preview" id="cardPreview" style="display: none;">
+              <div class="loyalty-card">
+                <div class="card-header">
+                  <img src="images/watermark_white.png" alt="Toyota Logo" class="card-logo">
+                  <div class="card-title">
+                    <h3 id="previewBranchHeader">Toyota</h3>
+                    <span>LOYALTY CARD</span>
+                  </div>
+                </div>
+                <div class="card-content">
+                  <div><strong>NAME:</strong><span style="margin-left: 4.4rem;" id="previewName"></span></div>
+                  <div><strong>CONTACT NO:</strong><span style="margin-left: 0.6rem;" id="previewContact"></span></div>
+                  <div><strong>EMAIL:</strong><span style="margin-left: 4.2rem;" id="previewEmail"></span></div>
+                  <div><strong>VEHICLE:</strong><span style="margin-left: 3rem;" id="previewVehicle"></span></div>
+                  <div><strong>PLATE NO:</strong><span style="margin-left: 2.4rem;" id="previewPlate"></span></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="button" onclick="previewRegistration()" class="preview-btn">Preview Registration</button>
+              <button type="submit" class="submit-btn">Register & Proceed</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="scripts/theme.js"></script>
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    function updateThemeIcon(theme) {
+      themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      updateThemeIcon(currentTheme);
+    });
+    themeToggle.addEventListener('click', () => {
+      const newTheme = toggleTheme();
+      updateThemeIcon(newTheme);
+    });
+
+    // SweetAlert2 notification
+    function showToast(message, isError = false) {
+      Swal.fire({
+        title: isError ? 'Error' : 'Success',
+        text: message,
+        icon: isError ? 'error' : 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: 'var(--toyota-red, #d2232a)',
+        background: '#ffffff',
+        color: 'var(--text-primary, #333)',
+        position: 'center',
+        didOpen: (popup) => {
+          popup.style.zIndex = 1000;
+        }
+      });
+    }
+
+    // Vehicle type selection
+    document.getElementById('vehicleType').addEventListener('change', function () {
+      const otherVehicleGroup = document.getElementById('otherVehicleGroup');
+      const otherVehicleInput = document.getElementById('otherVehicleType');
+      if (this.value === 'Other') {
+        otherVehicleGroup.style.display = 'block';
+        otherVehicleInput.required = true;
+      } else {
+        otherVehicleGroup.style.display = 'none';
+        otherVehicleInput.required = false;
+        otherVehicleInput.value = '';
+      }
+    });
+
+    // Preview registration
+    function previewRegistration() {
+      const name = document.getElementById('name').value;
+      const contactNumber = document.getElementById('contactNumber').value;
+      const email = document.getElementById('email').value;
+      const branchName = document.getElementById('branchName').value;
+      const vehicleType = document.getElementById('vehicleType').value;
+      const otherVehicleType = document.getElementById('otherVehicleType').value;
+      const plate = document.getElementById('plateNumber').value;
+
+      if (!name || !contactNumber || !email || !branchName || !vehicleType || !plate) {
+        showToast('Please fill in all fields first', true);
+        return;
+      }
+
+      const contactNumberRegex = /^[0-9]{11}$/;
+      if (!contactNumberRegex.test(contactNumber)) {
+        showToast('Contact number must be exactly 11 digits', true);
+        return;
+      }
+
+      if (vehicleType === 'Other' && !otherVehicleType) {
+        showToast('Please specify the vehicle type', true);
+        return;
+      }
+
+      const branchFormats = {
+        "Toyota Cebu City": "Toyota Cebu <br/>City",
+        "Toyota Mandaue North": "Toyota Mandaue <br/>North",
+        "Toyota Mandaue South": "Toyota Mandaue <br/>South",
+        "Toyota Talisay City": "Toyota Talisay <br/>City",
+        "Toyota Lapu-Lapu": "Toyota Lapu-<br/>Lapu",
+        "Toyota Tagbilaran": "Toyota <br/>Tagbilaran",
+        "Toyota Dumaguete City": "Toyota <br/>Dumaguete City"
+      };
+
+      document.getElementById('previewName').textContent = name;
+      document.getElementById('previewContact').textContent = contactNumber;
+      document.getElementById('previewEmail').textContent = email;
+      document.getElementById('previewVehicle').textContent = vehicleType === 'Other' ? otherVehicleType : vehicleType;
+      document.getElementById('previewPlate').textContent = plate;
+      document.getElementById('previewBranchHeader').innerHTML = branchFormats[branchName] || branchName;
+      document.getElementById('cardPreview').style.display = 'flex';
+    }
+
+    // Form submission
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const loadingSpinner = document.querySelector('.loading');
+      loadingSpinner.style.display = 'flex';
+
+      try {
+        const name = document.getElementById('name').value;
+        const contactNumber = document.getElementById('contactNumber').value;
+        const email = document.getElementById('email').value;
+        const branchName = document.getElementById('branchName').value;
+        const vehicleType = document.getElementById('vehicleType').value;
+        const otherVehicleType = document.getElementById('otherVehicleType').value;
+        const plateNumber = document.getElementById('plateNumber').value;
+
+        const contactNumberRegex = /^[0-9]{11}$/;
+        if (!contactNumberRegex.test(contactNumber)) {
+          showToast('Contact number must be exactly 11 digits', true);
+          loadingSpinner.style.display = 'none';
+          return;
+        }
+
+        if (vehicleType === 'Other' && !otherVehicleType) {
+          showToast('Please specify the vehicle type', true);
+          loadingSpinner.style.display = 'none';
+          return;
+        }
+
+        // Check if customer exists
+        const checkResponse = await fetch('/api/checkCustomer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ contactNumber, email })
+        });
+        if (!checkResponse.ok) {
+          throw new Error(`HTTP error! status: ${checkResponse.status}`);
+        }
+        const checkResult = await checkResponse.json();
+
+        if (!checkResult.success) {
+          showToast(checkResult.error || 'Failed to check customer', true);
+          loadingSpinner.style.display = 'none';
+          return;
+        }
+
+        if (checkResult.exists) {
+          showToast(`Customer ${checkResult.customer.name} already exists with card ${checkResult.customer.cardNumber}`, true);
+          loadingSpinner.style.display = 'none';
+          return;
+        }
+
+        // Prepare customer data (cardNumber generated server-side)
+        const customerData = {
+          name,
+          contactNumber,
+          email,
+          branch: branchName,
+          vehicle: vehicleType === 'Other' ? otherVehicleType : vehicleType,
+          plateNumber
+        };
+
+        // Insert customer into database
+        const registerResponse = await fetch('/api/registerCustomer', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(customerData)
+        });
+        if (!registerResponse.ok) {
+          throw new Error(`HTTP error! status: ${registerResponse.status}`);
+        }
+        const registerResult = await registerResponse.json();
+
+        if (registerResult.success) {
+          customerData.cardNumber = registerResult.cardNumber; // Add server-generated cardNumber
+          localStorage.setItem('newCustomer', JSON.stringify(customerData));
+          showToast('Registration successful!');
+          e.target.reset();
+          document.getElementById('cardPreview').style.display = 'none';
+          document.getElementById('otherVehicleGroup').style.display = 'none';
+          window.location.href = '/teller';
+        } else {
+          showToast(registerResult.error || 'Registration failed. Please try again.', true);
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        showToast('Registration failed: ' + error.message, true);
+      } finally {
+        loadingSpinner.style.display = 'none';
+      }
+    });
+
+    // Search placeholder
+    function performGlobalSearch() {
+      const searchTerm = document.querySelector('.search-box input').value.trim();
+      if (!searchTerm) {
+        showToast('Please enter a search term', true);
+        return;
+      }
+      const loadingSpinner = document.querySelector('.loading');
+      loadingSpinner.style.display = 'flex';
+      setTimeout(() => {
+        loadingSpinner.style.display = 'none';
+        showToast('Search functionality will be implemented soon');
+      }, 1000);
+    }
+    document.querySelector('.search-box button').addEventListener('click', performGlobalSearch);
+  </script>
+</body>
+</html>

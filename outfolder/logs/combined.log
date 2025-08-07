@@ -1,0 +1,200 @@
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:05:09.021Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:05:09.785Z"}
+{"level":"info","message":"db.db not found. Creating and initializing SQLite database...","timestamp":"2025-06-10T03:05:51.544Z"}
+{"level":"info","message":"SQLite DB initialized successfully.","timestamp":"2025-06-10T03:05:51.576Z"}
+{"level":"info","message":"Connected to SQLite database.","timestamp":"2025-06-10T03:05:51.686Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:05:51.699Z"}
+{"level":"error","message":"Database connection error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:05:54.874Z"}
+{"level":"info","message":"Connected to SQLite database.","timestamp":"2025-06-10T03:06:24.784Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:06:24.823Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:06:24.824Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:06:24.890Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:06:25.283Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-06-10T03:06:30.995Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:07:00.410Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:07:01.066Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:07:40.806Z"}
+{"level":"error","message":"Error checking customer: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:07:40.807Z"}
+{"level":"info","message":"Connected to SQLite database.","timestamp":"2025-06-10T03:08:28.570Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:08:28.607Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:08:28.608Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:08:28.681Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:08:29.063Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:08:30.490Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:08:50.752Z"}
+{"level":"error","message":"Error checking customer: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:08:50.753Z"}
+{"level":"info","message":"db.db not found. Creating and initializing SQLite database...","timestamp":"2025-06-10T03:09:34.171Z"}
+{"level":"info","message":"SQLite DB initialized successfully.","timestamp":"2025-06-10T03:09:34.179Z"}
+{"level":"info","message":"Connected to SQLite database.","timestamp":"2025-06-10T03:09:34.289Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:09:34.301Z"}
+{"level":"error","message":"Database connection error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:09:38.429Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:10:05.951Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:10:05.961Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:10:05.964Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:10:06.050Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:10:06.325Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:10:07.522Z"}
+{"level":"error","message":"Query error: ER_NO_SUCH_TABLE - ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:38:31.683Z"}
+{"level":"error","message":"Error checking customer: ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:38:31.683Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:43:54.527Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:43:54.531Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:43:54.532Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:43:54.593Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:43:54.874Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:43:56.356Z"}
+{"level":"error","message":"Query error: ER_NO_SUCH_TABLE - ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:44:28.539Z"}
+{"level":"error","message":"Error checking customer: ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:44:28.539Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:29.840Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:45:29.844Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:45:29.845Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:45:29.910Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:45:30.287Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:45:31.565Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:58.010Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:58.039Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:58.135Z"}
+{"level":"info","message":"Customer registered: CARD42737978","timestamp":"2025-06-10T03:45:58.136Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-06-10T03:45:58.210Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:58.242Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:58.366Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:45:58.371Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:46:50.621Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:46:51.835Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:46:52.548Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:46:59.356Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:48:01.174Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:48:01.182Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:48:01.182Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:48:01.258Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:48:01.657Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-06-10T03:48:04.036Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:48:04.096Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:48:04.105Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:48:04.111Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:04.645Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:51:04.650Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:51:04.651Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:51:04.732Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:51:05.107Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:16.714Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:51:16.719Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:51:16.719Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:51:16.801Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:51:17.165Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-06-10T03:51:18.540Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:18.596Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:18.604Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:18.615Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:51:28.060Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-06-10T03:51:28.891Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:28.911Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:28.922Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:28.929Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:51:29.731Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-06-10T03:51:37.788Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:37.818Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:37.828Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:51:37.833Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-06-10T03:53:06.059Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-06-10T03:53:06.064Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-06-10T03:53:06.065Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-06-10T03:53:06.126Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-06-10T03:53:06.460Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-06-10T03:53:09.693Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:01:16.056Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-07-12T02:01:16.059Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-07-12T02:01:16.060Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-07-12T02:01:16.152Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:01:16.858Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-07-12T02:01:24.582Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:05.358Z"}
+{"level":"info","message":"Customer found: CARD42737978","timestamp":"2025-07-12T02:02:05.359Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:25.849Z"}
+{"level":"info","message":"Customer found: CARD42737978","timestamp":"2025-07-12T02:02:25.850Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:02:41.050Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:02:42.272Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:42.535Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:42.576Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:42.584Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:02:43.486Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:43.533Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:43.542Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:43.547Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:02:44.121Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.151Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.159Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.164Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:02:44.312Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.332Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.344Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.349Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:02:44.505Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.537Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.543Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:02:44.547Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:02:55.258Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:03:05.256Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-07-12T02:03:05.261Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-07-12T02:03:05.262Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-07-12T02:03:05.331Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:03:05.663Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:04:09.442Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:04:09.557Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:04:09.566Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:04:09.572Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:04:11.440Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-07-12T02:04:13.080Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:05:33.414Z"}
+{"level":"info","message":"Customer found: CARD42737978","timestamp":"2025-07-12T02:05:33.414Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:05:45.049Z"}
+{"level":"warn","message":"Validation error: \"plateNumber\" with value \"casd23123\" fails to match the required pattern: /^[A-Z0-9 -]+$/","timestamp":"2025-07-12T02:05:45.054Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:05:55.642Z"}
+{"level":"warn","message":"Validation error: \"plateNumber\" with value \"casd23123\" fails to match the required pattern: /^[A-Z0-9 -]+$/","timestamp":"2025-07-12T02:05:55.645Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:06:29.186Z"}
+{"level":"warn","message":"Validation error: \"plateNumber\" with value \"casd23123\" fails to match the required pattern: /^[A-Z0-9 -]+$/","timestamp":"2025-07-12T02:06:29.189Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:06:33.376Z"}
+{"level":"warn","message":"Validation error: \"plateNumber\" with value \"casd23123\" fails to match the required pattern: /^[A-Z0-9 -]+$/","timestamp":"2025-07-12T02:06:33.379Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:06:35.464Z"}
+{"level":"warn","message":"Validation error: \"plateNumber\" with value \"casd23123\" fails to match the required pattern: /^[A-Z0-9 -]+$/","timestamp":"2025-07-12T02:06:35.467Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:07:01.160Z"}
+{"level":"warn","message":"Validation error: \"plateNumber\" with value \"casd23123\" fails to match the required pattern: /^[A-Z0-9 -]+$/","timestamp":"2025-07-12T02:07:01.163Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:08:25.770Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:25.812Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:25.825Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:25.829Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:32.460Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-07-12T02:08:32.465Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-07-12T02:08:32.466Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-07-12T02:08:32.530Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:08:32.686Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-07-12T02:08:34.067Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:34.127Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:34.137Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:08:34.143Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:13:21.435Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-07-12T02:13:22.314Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-07-12T02:13:29.931Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:13:31.025Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-07-12T02:13:48.146Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:13:56.450Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-07-12T02:17:10.607Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-07-12T02:17:10.611Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-07-12T02:17:10.613Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-07-12T02:17:10.687Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:17:10.894Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:18:31.114Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-07-12T02:18:31.857Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-08-07T02:55:26.540Z"}
+{"level":"info","message":"Database connection status: true","timestamp":"2025-08-07T02:55:26.677Z"}
+{"level":"info","message":"Database connection established successfully.","timestamp":"2025-08-07T02:55:26.688Z"}
+{"level":"info","message":"Server running on port 3000","timestamp":"2025-08-07T02:55:29.043Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-08-07T02:55:29.578Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-08-07T02:55:45.938Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-08-07T02:55:54.821Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-08-07T02:55:59.260Z"}
+{"level":"info","message":"Serving teller page","timestamp":"2025-08-07T02:56:00.098Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-08-07T02:56:00.392Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-08-07T02:56:00.746Z"}
+{"level":"info","message":"Query executed successfully","timestamp":"2025-08-07T02:56:00.761Z"}
+{"level":"info","message":"Serving dashboard page","timestamp":"2025-08-07T02:56:01.898Z"}
+{"level":"info","message":"Serving register page","timestamp":"2025-08-07T02:56:06.726Z"}

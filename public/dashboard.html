@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Toyota Loyalty Card System</title>
+    <link rel="stylesheet" href="styles/shared.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            min-height: 100vh;
+            /* Ensure it takes at least the full viewport height */
+            height: 100%;
+            /* Ensure it stretches to fit the content */
+            margin: 0;
+            /* Remove any default margins */
+        }
+
+        .dashboard-container {
+            box-sizing: border-box;
+            padding: 2rem;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 0.5s ease-out;
+            flex: 1;
+            /* Allow it to grow and fill space */
+            display: flex;
+            flex-direction: column;
+            /* Ensure children stack vertically */
+        }
+
+        .welcome-card {
+            background: var(--bg-primary);
+            padding: 0 0 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin: -1rem 0 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .welcome-card h1 {
+            color: var(--toyota-red);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .welcome-card p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .action-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+            flex: 1;
+            /* Allow the action cards to grow and fill remaining space */
+        }
+
+        .action-card {
+            background: var(--toyota-red);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            align-items: center;
+            text-align: center;
+            min-height: 250px;
+            color: var(--button-text);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            pointer-events: none;
+        }
+
+        .action-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px var(--shadow-color);
+            background: #ff6666;
+        }
+
+        .action-card h2 {
+            color: var(--button-text);
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .action-card p {
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .action-card i {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            font-size: 3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .action-card:hover i {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1200px) {
+            .action-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .action-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-card {
+                padding: 1rem;
+            }
+
+            .welcome-card h1 {
+                font-size: 2rem;
+            }
+
+            .welcome-card p {
+                font-size: 1rem;
+            }
+        }
+
+        .search-box {
+            width: 100%;
+        }
+
+        .search-box input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="https://www.toyota.com/favicon.ico" alt="Toyota Logo">
+        </div>
+        <nav class="sidebar-nav">
+            <button class="active" data-tooltip="Dashboard" onclick="window.location.href='/dashboard'">
+                <i class="fas fa-home"></i>
+            </button>
+            <button data-tooltip="Register Card" onclick="window.location.href='/register'">
+                <i class="fas fa-id-card"></i>
+            </button>
+            <button data-tooltip="Transactions" onclick="window.location.href='/teller'">
+                <i class="fas fa-exchange-alt"></i>
+            </button>
+            <button data-tooltip="Reports" onclick="window.location.href='/reports'">
+                <i class="fas fa-chart-bar"></i>
+            </button>
+            <button data-tooltip="Settings" onclick="window.location.href='/settings'">
+                <i class="fas fa-cog"></i>
+            </button>
+        </nav>
+    </aside>
+
+    <div class="main-container">
+        <header class="header">
+            <button id="theme-toggle" class="theme-toggle" data-tooltip="Toggle Theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+
+        <main>
+            <div class="dashboard-container">
+                <div class="welcome-card">
+                    <h1>Welcome to Toyota Loyalty Card System</h1>
+                    <p>Manage customer loyalty cards, process transactions, and track rewards all in one place.</p>
+                </div>
+
+                <div class="search-box">
+                    <input type="text" placeholder="Search by card number or customer name...">
+                    <button>
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+
+                <div class="action-cards">
+                    <div class="action-card" onclick="window.location.href='/register'">
+                        <i class="fas fa-id-card fa-2x"></i>
+                        <h2>Register New Card</h2>
+                        <p>Issue a new loyalty card to customers and manage their information. Ensure accurate data
+                            entry for seamless tracking.</p>
+                    </div>
+
+                    <div class="action-card" onclick="window.location.href='/teller'">
+                        <i class="fas fa-exchange-alt fa-2x"></i>
+                        <h2>Manage Transactions</h2>
+                        <p>Record purchases, redeem points, and manage customer transactions. Keep financial records
+                            up-to-date.</p>
+                    </div>
+
+                    <div class="action-card" onclick="window.location.href='/reports'">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                        <h2>View Reports</h2>
+                        <p>Access analytics, transaction history, and customer insights. Use data to drive strategic
+                            decisions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Office</h4>
+                        <p><i class="fas fa-phone"></i> 0908-629-4668 / 0968-616-3549</p>
+                        <p><i class="fas fa-phone"></i> (032) 236 0951 / 420 9555 loc. 270/284</p>
+                        <p><i class="fas fa-envelope"></i> customer.relations@toyotamandauesouth.com.ph</p>
+                        <p style="margin-top: 2rem;"><i class="fas fa-map-marker-alt"></i> Toyota Mandaue South, Cebu:
+                            Ouano Avenue, <br />Mantuyong CSSEAZ Mandaue City, Cebu <br /> Philippines 6014
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>WHO WE ARE</h4>
+                        <p>The company started operation on <br />March 1, 1990. It is a corporation owned <br />
+                            by Filipino businessmen, whose main <br />objective is to bring more investment in <br />
+                            the city, supply quality passenger cars <br />and create job opportunities for the <br />
+                            Cebuanos.
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>WHAT WE DO</h4>
+                        <p>To be the No.1 TOYOTA DEALER <br />in the country where GREAT <br />
+                            PEOPLE work as a TEAM to <br />provide the BEST products and <br />service to our CUSTOMERS.
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>SOCIAL RESPONSIBILITY</h4>
+                        <p>"We derive our resources from the <br/>society. So, we should accordingly <br/>give back to society.</p>
+                        <p style="margin-top: 0.5rem;">- TMP Chairman George S.K. Ty</p>
+                    </div>
+
+                    <div class="footer-section social">
+                        <ul>
+                            <li><a href="https://www.facebook.com/toyotamandauesouthcebuofficial"><i
+                                        class="fab fa-facebook-f" aria-label="Facebook"></i></a></li>
+                            <li><a href="https://x.com/ToyotaMotorPH"><i class="fab fa-twitter"
+                                        aria-label="Twitter"></i></a></li>
+                            <li><a href="https://www.instagram.com/toyotamandauesouthofficial/#"><i
+                                        class="fab fa-instagram" aria-label="Instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UC5rnxQeDpMnyCZD8KH7cZMA"><i
+                                        class="fab fa-youtube" aria-label="YouTube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom" style="margin-top: 0.5rem;">
+                    <p>© 2025 Toyota Loyalty Card System. All rights reserved</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <script src="scripts/theme.js"></script>
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('i');
+
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+            updateThemeIcon(currentTheme);
+        });
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = toggleTheme();
+            updateThemeIcon(newTheme);
+        });
+    </script>
+</body>
+
+</html>

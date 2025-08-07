@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Management - Toyota Loyalty Card</title>
+  <link rel="stylesheet" href="styles/shared.css">
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/teller.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <style>
+    /* Unchanged styles */
+    .multi-select-container {
+      position: relative;
+      width: 100%;
+      min-height: 30px;
+      border: 1px solid #000;
+      border-radius: 4px;
+      padding: 5px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .multi-select-button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px;
+      background: #f5f5f5;
+      border-radius: 4px;
+    }
+    .multi-select-button span {
+      font-size: 1rem;
+      color: #333;
+    }
+    .multi-select-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      max-height: 300px;
+      overflow-y: auto;
+      z-index: 1000;
+    }
+    .multi-select-dropdown.show {
+      display: block;
+    }
+    .category-group {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .category-group:last-child {
+      border-bottom: none;
+    }
+    .category-group h4 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+      color: #333;
+      font-weight: 600;
+    }
+    .item-option {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+    .item-option input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    .item-option label {
+      margin: 0;
+      flex: 1;
+      cursor: pointer;
+    }
+    .selected-items-list {
+      margin-top: 5px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      min-height: 50px;
+    }
+    .selected-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px;
+      margin-bottom: 5px;
+      background: #f9f9f9;
+      border-radius: 4px;
+    }
+    .selected-item span {
+      flex: 1;
+      font-size: 0.9rem;
+      color: #000;
+    }
+    .selected-item input[type="number"] {
+      width: 60px;
+      padding: 4px;
+      margin: 0 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .selected-item button {
+      background: #d2232a;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .selected-item button:hover {
+      opacity: 0.9;
+    }
+    .input-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .input-row label {
+      width: 100px;
+      font-weight: 600;
+    }
+    .input-row input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    /* Added styles */
+    .transaction-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+    }
+    .transaction-actions button {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--toyota-red, #d2232a);
+      color: var(--button-text, #fff);
+      transition: all 0.3s ease;
+    }
+    .transaction-actions button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <img src="https://www.toyota.com/favicon.ico" alt="Toyota Logo">
+    </div>
+    <nav class="sidebar-nav">
+      <button data-tooltip="Dashboard" onclick="window.location.href='/dashboard'">
+        <i class="fas fa-home"></i>
+      </button>
+      <button data-tooltip="Register Card" onclick="window.location.href='/register'">
+        <i class="fas fa-id-card"></i>
+      </button>
+      <button class="active" data-tooltip="Transactions" onclick="window.location.href='/teller'">
+        <i class="fas fa-exchange-alt"></i>
+      </button>
+      <button data-tooltip="Reports" onclick="window.location.href='/reports'">
+        <i class="fas fa-chart-bar"></i>
+      </button>
+      <button data-tooltip="Settings" onclick="window.location.href='/settings'">
+        <i class="fas fa-cog"></i>
+      </button>
+    </nav>
+  </aside>
+
+  <header class="header">
+    <button id="theme-toggle" class="theme-toggle" data-tooltip="Toggle Theme">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <main>
+    <div class="content-container">
+      <div class="search-container">
+        <div class="search-box">
+          <input type="text" placeholder="Search by card number or customer name...">
+          <button>
+            <i class="fas fa-search"></i>
+            Search
+          </button>
+        </div>
+      </div>
+
+      <div class="transaction-section">
+        <div class="transaction-header">
+          <h2>Transaction Management</h2>
+        </div>
+
+        <div class="history-section">
+          <h3>Recent Transactions</h3>
+          <div class="history-controls">
+            <div class="period-selector">
+              <button>Today</button>
+              <button class="active">This Week</button>
+              <button>This Month</button>
+              <button>This Year</button>
+            </div>
+          </div>
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Service/Product</th>
+                <th>Car Model</th>
+                <th>Price</th>
+                <th>Points</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024-03-20</td>
+                <td>Oil Change</td>
+                <td>Camry 2023</td>
+                <td>₱5,000.00</td>
+                <td>+50</td>
+              </tr>
+              <tr>
+                <td>2024-03-19</td>
+                <td>Brake Service</td>
+                <td>Corolla 2022</td>
+                <td>₱1,000.00</td>
+                <td>+10</td>
+              </tr>
+              <tr>
+                <td>2024-03-18</td>
+                <td>Tire Rotation</td>
+                <td>RAV4 2024</td>
+                <td>₱3,500.00</td>
+                <td>+35</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="transaction-type-section">
+          <div class="form-row">
+            <div class="form-group">
+              <label>ENTER CARD NUMBER/NAME:</label>
+              <select id="customerSelect">
+                <option value="" disabled selected>Select customer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>VEHICLE</label>
+              <select id="vehicleSelect">
+                <option value="" disabled selected>Select vehicle</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>PLATE NUMBER:</label>
+              <input type="text" id="plateNumber">
+            </div>
+            <div class="form-group">
+              <label>REMAINING POINTS:</label>
+              <input type="text" id="remainingPoints" readonly value="0">
+            </div>
+          </div>
+        </div>
+
+        <div class="transaction-type-section">
+          <div class="transaction-columns">
+            <div class="left-column">
+              <div class="radio-group">
+                <input type="radio" id="service" name="transactionType" value="service" checked>
+                <label for="service">Service</label>
+                <input type="radio" id="product" name="transactionType" value="product">
+                <label for="product">Product</label>
+              </div>
+              <div class="multi-select-container">
+                <div class="multi-select-button">
+                  <span>Select Service(s)</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="multi-select-dropdown"></div>
+              </div>
+              <div class="selected-items-list"></div>
+            </div>
+            <div class="right-column">
+              <div class="input-row">
+                <label>PRICE:</label>
+                <input type="number" id="totalPrice" readonly>
+              </div>
+              <div class="input-row">
+                <label>POINTS:</label>
+                <input type="number" id="totalPoints" readonly>
+              </div>
+              <div class="input-row">
+                <label>DISCOUNT:</label>
+                <input type="number" id="discount" value="0">
+              </div>
+              <div class="button-container">
+                <button type="button" onclick="applyDiscount()">DISCOUNT</button>
+              </div>
+            </div>
+          </div>
+          <div class="transaction-actions">
+            <button onclick="saveTransaction()">Save Transaction</button>
+          </div>
+        </div>
+
+        <div class="combined-section">
+          <div class="combined-grid">
+            <div class="calculator-panel">
+              <div class="branch-display">
+                <h3>MANDAUE SOUTH BRANCH</h3>
+              </div>
+              <div class="calculator-layout">
+                <div class="action-buttons">
+                  <button class="update-btn">
+                    <i class="fas fa-arrow-up"></i>
+                    <span>UPDATE</span>
+                  </button>
+                  <button class="redeem-btn">
+                    <i class="fas fa-arrow-down"></i>
+                    <span>REDEEM</span>
+                  </button>
+                </div>
+                <div class="numpad-grid">
+                  <div class="numbers">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button class="qty-btn">Qty</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button class="disc-btn">Disc</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button class="price-btn">Price</button>
+                    <button class="plus-minus">+/-</button>
+                    <button>0</button>
+                    <button>.</button>
+                    <button class="backspace"><i class="fas fa-backspace"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="scripts/theme.js"></script>
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = themeToggle.querySelector('i');
+    function updateThemeIcon(theme) {
+      themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+    document.addEventListener('DOMContentLoaded', async () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      updateThemeIcon(currentTheme);
+      populateCustomerInfo();
+      await fetchCategoriesAndItems();
+      updateSelectOptions();
+    });
+    themeToggle.addEventListener('click', () => {
+      const newTheme = toggleTheme();
+      updateThemeIcon(newTheme);
+    });
+
+    // SweetAlert2 notification
+    function showToast(message, isError = false) {
+      Swal.fire({
+        title: isError ? 'Error' : 'Success',
+        text: message,
+        icon: isError ? 'error' : 'success',
+        confirmButtonText: 'OK',
+        confirmButtonColor: 'var(--toyota-red, #d2232a)',
+        background: '#ffffff',
+        color: 'var(--text-primary, #333)',
+        position: 'center',
+        didOpen: (popup) => {
+          popup.style.zIndex = 1000;
+        }
+      });
+    }
+
+    // Service/Product lists (replaced by API fetch)
+    let categoriesData = { Service: [], Product: [] };
+    let itemsData = { Service: {}, Product: {} };
+
+    async function fetchCategoriesAndItems() {
+      try {
+        // Fetch categories
+        const catRes = await fetch('/api/categories');
+        const catJson = await catRes.json();
+        if (catJson.success) {
+          categoriesData = catJson.categories;
+        }
+        // Fetch items for both types
+        for (const type of ['Service', 'Product']) {
+          const itemRes = await fetch(`/api/items?type=${type}`);
+          const itemJson = await itemRes.json();
+          if (itemJson.success) {
+            itemsData[type] = itemJson.items;
+          }
+        }
+      } catch (err) {
+        showToast('Failed to load categories/items from server.', true);
+      }
+    }
+
+    function updateSelectOptions() {
+      multiSelectDropdown.innerHTML = '';
+      const type = serviceRadio.checked ? 'Service' : 'Product';
+      const placeholder = serviceRadio.checked ? 'Select Service(s)' : 'Select Product(s)';
+      multiSelectButton.querySelector('span').textContent = placeholder;
+      const items = itemsData[type];
+      if (!items) return;
+      Object.keys(items).forEach(category => {
+        const categoryGroup = document.createElement('div');
+        categoryGroup.className = 'category-group';
+        const categoryTitle = document.createElement('h4');
+        categoryTitle.textContent = category;
+        categoryGroup.appendChild(categoryTitle);
+        items[category].forEach(item => {
+          const itemOption = document.createElement('div');
+          itemOption.className = 'item-option';
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = item.name;
+          checkbox.dataset.price = item.price;
+          checkbox.dataset.points = item.points;
+          const label = document.createElement('label');
+          label.textContent = item.name;
+          itemOption.appendChild(checkbox);
+          itemOption.appendChild(label);
+          categoryGroup.appendChild(itemOption);
+          checkbox.addEventListener('change', updateSelectedItems);
+        });
+        multiSelectDropdown.appendChild(categoryGroup);
+      });
+    }
+
+    // DOM elements
+    const serviceRadio = document.getElementById('service');
+    const productRadio = document.getElementById('product');
+    const multiSelectContainer = document.querySelector('.multi-select-container');
+    const multiSelectButton = document.querySelector('.multi-select-button');
+    const multiSelectDropdown = document.querySelector('.multi-select-dropdown');
+    const selectedItemsList = document.querySelector('.selected-items-list');
+    const totalPriceInput = document.getElementById('totalPrice');
+    const totalPointsInput = document.getElementById('totalPoints');
+    const discountInput = document.getElementById('discount');
+    const customerSelect = document.getElementById('customerSelect');
+    const vehicleSelect = document.getElementById('vehicleSelect');
+    const plateNumberInput = document.getElementById('plateNumber');
+    const remainingPointsInput = document.getElementById('remainingPoints');
+
+    function updateSelectOptions() {
+      multiSelectDropdown.innerHTML = '';
+      const type = serviceRadio.checked ? 'Service' : 'Product';
+      const placeholder = serviceRadio.checked ? 'Select Service(s)' : 'Select Product(s)';
+      multiSelectButton.querySelector('span').textContent = placeholder;
+      const items = itemsData[type];
+      if (!items) return;
+      Object.keys(items).forEach(category => {
+        const categoryGroup = document.createElement('div');
+        categoryGroup.className = 'category-group';
+        const categoryTitle = document.createElement('h4');
+        categoryTitle.textContent = category;
+        categoryGroup.appendChild(categoryTitle);
+
+        items[category].forEach(item => {
+          const itemOption = document.createElement('div');
+          itemOption.className = 'item-option';
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = item.name;
+          checkbox.dataset.price = item.price;
+          checkbox.dataset.points = item.points;
+          const label = document.createElement('label');
+          label.textContent = item.name;
+          itemOption.appendChild(checkbox);
+          itemOption.appendChild(label);
+          categoryGroup.appendChild(itemOption);
+          checkbox.addEventListener('change', updateSelectedItems);
+        });
+
+        multiSelectDropdown.appendChild(categoryGroup);
+      });
+    }
+
+    function updateSelectedItems() {
+      selectedItemsList.innerHTML = '';
+      const checkboxes = multiSelectDropdown.querySelectorAll('input[type="checkbox"]:checked');
+      checkboxes.forEach(checkbox => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'selected-item';
+        const itemName = document.createElement('span');
+        itemName.textContent = checkbox.value;
+        itemDiv.appendChild(itemName);
+
+        if (productRadio.checked) {
+          const qtyInput = document.createElement('input');
+          qtyInput.type = 'number';
+          qtyInput.min = '1';
+          qtyInput.value = '1';
+          qtyInput.addEventListener('input', updateTotals);
+          itemDiv.appendChild(qtyInput);
+        }
+
+        const removeBtn = document.createElement('button');
+        removeBtn.innerHTML = '<i class="fas fa-trash"></i>';
+        removeBtn.addEventListener('click', () => {
+          checkbox.checked = false;
+          updateSelectedItems();
+        });
+        itemDiv.appendChild(removeBtn);
+
+        selectedItemsList.appendChild(itemDiv);
+      });
+
+      updateTotals();
+    }
+
+    function updateTotals() {
+      const selectedItems = selectedItemsList.querySelectorAll('.selected-item');
+      let totalPrice = 0;
+      let totalPoints = 0;
+      const discount = parseFloat(discountInput.value) || 0;
+
+      selectedItems.forEach(itemDiv => {
+        const itemName = itemDiv.querySelector('span').textContent;
+        const checkbox = multiSelectDropdown.querySelector(`input[value="${itemName}"]`);
+        if (checkbox) {
+          const price = parseFloat(checkbox.dataset.price);
+          const points = parseInt(checkbox.dataset.points);
+          let qty = 1;
+          if (productRadio.checked) {
+            const qtyInput = itemDiv.querySelector('input[type="number"]');
+            qty = parseInt(qtyInput.value) || 1;
+            if (qty <= 0) {
+              showToast('Please enter a valid quantity (greater than 0).', true);
+              qtyInput.value = 1;
+              qty = 1;
+            }
+          }
+          totalPrice += price * qty;
+          totalPoints += points * qty;
+        }
+      });
+
+      const discountedPrice = totalPrice - discount >= 0 ? totalPrice - discount : 0;
+      totalPriceInput.value = discountedPrice.toFixed(2);
+      totalPointsInput.value = totalPoints;
+
+      if (discount > totalPrice) {
+        showToast('Discount cannot exceed the total price.', true);
+        discountInput.value = totalPrice;
+        totalPriceInput.value = 0;
+      }
+    }
+
+    function applyDiscount() {
+      const discount = parseFloat(discountInput.value) || 0;
+      if (discount < 0) {
+        showToast('Discount cannot be negative.', true);
+        discountInput.value = 0;
+      }
+      updateTotals();
+    }
+
+    async function saveTransaction() {
+      const cardNumber = customerSelect.value;
+      const selectedItems = selectedItemsList.querySelectorAll('.selected-item');
+      const totalPrice = parseFloat(totalPriceInput.value);
+      const totalPoints = parseInt(totalPointsInput.value);
+
+      if (!cardNumber) {
+        showToast('Please select a customer.', true);
+        return;
+      }
+
+      if (selectedItems.length === 0) {
+        showToast('Please select at least one service or product.', true);
+        return;
+      }
+
+      const loadingSpinner = document.querySelector('.loading');
+      if (!loadingSpinner) {
+        console.error('Loading spinner not found');
+        showToast('UI error: Loading spinner missing.', true);
+        return;
+      }
+      loadingSpinner.style.display = 'flex';
+
+      try {
+        for (const itemDiv of selectedItems) {
+          const itemName = itemDiv.querySelector('span').textContent;
+          const checkbox = multiSelectDropdown.querySelector(`input[value="${itemName}"]`);
+          if (checkbox) {
+            const price = parseFloat(checkbox.dataset.price);
+            const points = parseInt(checkbox.dataset.points);
+            let qty = 1;
+            if (productRadio.checked) {
+              const qtyInput = itemDiv.querySelector('input[type="number"]');
+              qty = parseInt(qtyInput.value) || 1;
+            }
+
+            const transactionData = {
+              cardNumber,
+              serviceOrProduct: itemName,
+              price: price * qty,
+              points: points * qty
+            };
+
+            const response = await fetch('/api/addTransaction', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(transactionData)
+            });
+            const result = await response.json();
+
+            if (!result.success) {
+              showToast('Failed to save transaction.', true);
+              return;
+            }
+          }
+        }
+
+        showToast('Transaction saved successfully!');
+        selectedItemsList.innerHTML = '';
+        multiSelectDropdown.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        totalPriceInput.value = '';
+        totalPointsInput.value = '';
+        discountInput.value = '0';
+        remainingPointsInput.value = parseInt(remainingPointsInput.value) + totalPoints;
+      } catch (error) {
+        console.error('Error saving transaction:', error);
+        showToast('Error saving transaction.', true);
+      } finally {
+        loadingSpinner.style.display = 'none';
+      }
+    }
+
+    function populateCustomerInfo() {
+      const customerData = localStorage.getItem('newCustomer');
+      if (customerData) {
+        const customer = JSON.parse(customerData);
+        const customerOption = document.createElement('option');
+        customerOption.value = customer.cardNumber;
+        customerOption.textContent = `${customer.name} (${customer.cardNumber})`;
+        customerOption.selected = true;
+        customerSelect.appendChild(customerOption);
+
+        const vehicleOption = document.createElement('option');
+        vehicleOption.value = customer.vehicle;
+        vehicleOption.textContent = customer.vehicle;
+        vehicleOption.selected = true;
+        vehicleSelect.appendChild(vehicleOption);
+
+        plateNumberInput.value = customer.plateNumber;
+        remainingPointsInput.value = '0'; // Default points
+        localStorage.removeItem('newCustomer');
+      }
+    }
+
+    multiSelectButton.addEventListener('click', () => {
+      multiSelectDropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!multiSelectContainer.contains(e.target)) {
+        multiSelectDropdown.classList.remove('show');
+      }
+    });
+
+    discountInput.addEventListener('input', updateTotals);
+
+    serviceRadio.addEventListener('change', () => {
+      updateSelectOptions();
+      updateSelectedItems();
+    });
+    productRadio.addEventListener('change', () => {
+      updateSelectOptions();
+      updateSelectedItems();
+    });
+
+    const periodButtons = document.querySelectorAll('.period-selector button');
+    periodButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        periodButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        updateTransactionHistory(button.textContent.toLowerCase());
+      });
+    });
+
+    function updateTransactionHistory(period) {
+      // Placeholder for transaction history update
+    }
+
+    // Search placeholder
+    function performGlobalSearch() {
+      const searchTerm = document.querySelector('.search-box input').value.trim();
+      if (!searchTerm) {
+        showToast('Please enter a search term', true);
+        return;
+      }
+      const loadingSpinner = document.querySelector('.loading');
+      loadingSpinner.style.display = 'flex';
+      setTimeout(() => {
+        loadingSpinner.style.display = 'none';
+        showToast('Search functionality will be implemented soon');
+      }, 1000);
+    }
+    document.querySelector('.search-box button').addEventListener('click', performGlobalSearch);
+  </script>
+</body>
+</html>

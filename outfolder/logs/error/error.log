@@ -1,0 +1,694 @@
+2025-05-28T05:13:10.172Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:13:10.173Z Error checking customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:13:10.188Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:54:31
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:13:10.188Z Error inserting customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:54:31
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:20:55.775Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:20:55.776Z Error checking customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:20:55.788Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:54:31
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:20:55.788Z Error inserting customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:27:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:54:31
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:33:22.091Z App threw an error during load
+2025-05-28T05:33:22.093Z Error: ENOENT: no such file or directory, open './reso/node/config.ini'
+    at Object.openSync (node:fs:603:3)
+    at Object.func [as openSync] (node:electron/js2c/node_init:2:2214)
+    at Object.readFileSync (node:fs:471:35)
+    at t.readFileSync (node:electron/js2c/node_init:2:9771)
+    at Object.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:13:29)
+    at Module._compile (node:internal/modules/cjs/loader:1271:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1326:10)
+    at Module.load (node:internal/modules/cjs/loader:1126:32)
+    at Module._load (node:internal/modules/cjs/loader:967:12)
+    at c._load (node:electron/js2c/node_init:2:13672)
+2025-05-28T05:41:01.180Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:41:01.181Z Error checking customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:41:12.295Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:41:12.295Z Error checking customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:43:02.905Z Error getting MySQL connection from pool: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:43:02.905Z Error checking customer: Error: connect ECONNREFUSED ::1:3306
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1555:16)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  errno: -4078,
+  code: 'ECONNREFUSED',
+  syscall: 'connect',
+  address: '::1',
+  port: 3306,
+  fatal: true
+}
+2025-05-28T05:56:56.558Z Error getting MySQL connection from pool: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:56:56.558Z Error checking customer: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true
+}
+2025-05-28T05:57:06.373Z Error getting MySQL connection from pool: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T05:57:06.373Z Error checking customer: Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_NOT_SUPPORTED_AUTH_MODE',
+  errno: 1251,
+  sqlMessage: 'Client does not support authentication protocol requested by server; consider upgrading MySQL client',
+  sqlState: '08004',
+  fatal: true
+}
+2025-05-28T06:32:25.929Z Error getting MySQL connection from pool: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T06:32:25.930Z Error checking customer: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_ACCESS_DENIED_ERROR',
+  errno: 1045,
+  sqlMessage: "Access denied for user 'root'@'localhost' (using password: NO)",
+  sqlState: '28000',
+  fatal: true
+}
+2025-05-28T06:32:32.616Z Error getting MySQL connection from pool: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T06:32:32.617Z Error checking customer: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_ACCESS_DENIED_ERROR',
+  errno: 1045,
+  sqlMessage: "Access denied for user 'root'@'localhost' (using password: NO)",
+  sqlState: '28000',
+  fatal: true
+}
+2025-05-28T06:50:58.946Z Error getting MySQL connection from pool: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T06:50:58.947Z Error checking customer: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_ACCESS_DENIED_ERROR',
+  errno: 1045,
+  sqlMessage: "Access denied for user 'root'@'localhost' (using password: NO)",
+  sqlState: '28000',
+  fatal: true
+}
+2025-05-28T06:53:26.812Z Error getting MySQL connection from pool: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T06:53:26.813Z Error checking customer: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_ACCESS_DENIED_ERROR',
+  errno: 1045,
+  sqlMessage: "Access denied for user 'root'@'localhost' (using password: NO)",
+  sqlState: '28000',
+  fatal: true
+}
+2025-05-28T06:55:03.031Z Error getting MySQL connection from pool: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T06:55:03.031Z Error checking customer: Error: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: NO)
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_ACCESS_DENIED_ERROR',
+  errno: 1045,
+  sqlMessage: "Access denied for user 'root'@'localhost' (using password: NO)",
+  sqlState: '28000',
+  fatal: true
+}
+2025-05-28T08:10:45.391Z Error getting MySQL connection from pool: Error: ER_BAD_DB_ERROR: Unknown database 'toyota'
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13)
+2025-05-28T08:10:45.392Z Error checking customer: Error: ER_BAD_DB_ERROR: Unknown database 'toyota'
+    at Sequence._packetToError (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Sequence.js:47:14)
+    at Handshake.ErrorPacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\sequences\Handshake.js:123:18)
+    at Protocol._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:291:23)
+    at Parser._parsePacket (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:433:10)
+    at Parser.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Parser.js:43:10)
+    at Protocol.write (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:38:16)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:88:28)
+    at Socket.<anonymous> (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:526:10)
+    at Socket.emit (node:events:517:28)
+    at addChunk (node:internal/streams/readable:335:12)
+    --------------------
+    at Protocol._enqueue (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:144:48)
+    at Protocol.handshake (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\protocol\Protocol.js:51:23)
+    at PoolConnection.connect (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Connection.js:116:18)
+    at Pool.getConnection (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\mysql\lib\Pool.js:48:16)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:29:14
+    at new Promise (<anonymous>)
+    at Object.executeQuery (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\reso\node\db.js:28:12)
+    at C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\app.js:35:37
+    at Layer.handleRequest (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\mary\Documents\GitHub\ToyotaLoyaltyCardSystem\node_modules\router\lib\route.js:157:13) {
+  code: 'ER_BAD_DB_ERROR',
+  errno: 1049,
+  sqlMessage: "Unknown database 'toyota'",
+  sqlState: '42000',
+  fatal: true
+}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:54:04.879Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:54:04.880Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:59:29.718Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:59:29.719Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:59:33.621Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:59:33.625Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:59:46.525Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T08:59:46.526Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:00:58.636Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:00:58.636Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:25:35.228Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:25:35.229Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:27:22.168Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:27:22.171Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:29:10.186Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:29:10.187Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:51:48.126Z"}
+{"level":"error","message":"Error checking customer: ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-05-28T09:51:48.128Z"}
+{"level":"error","message":"Unhandled error: Error: ENOENT: no such file or directory, stat 'C:\\Users\\mary\\Documents\\GitHub\\outfolder\\public\\dashboard.html'","timestamp":"2025-06-04T05:53:58.320Z"}
+{"level":"error","message":"Unhandled error: Error: ENOENT: no such file or directory, stat 'C:\\Users\\mary\\Documents\\GitHub\\outfolder\\public\\dashboard.html'","timestamp":"2025-06-07T01:17:10.107Z"}
+{"level":"error","message":"Unhandled error: Error: ENOENT: no such file or directory, stat 'C:\\Users\\mary\\Documents\\public\\dashboard.html'","timestamp":"2025-06-07T01:41:14.058Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-06-07T04:48:43.773Z"}
+{"level":"error","message":"Database connection error: ","timestamp":"2025-06-07T04:48:43.774Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'root'@'localhost' (using password: YES)","timestamp":"2025-06-07T04:49:37.618Z"}
+{"level":"error","message":"Database connection error: ","timestamp":"2025-06-07T04:49:37.627Z"}
+{"level":"error","message":"Missing or invalid DB config: port","timestamp":"2025-06-07T04:50:10.444Z"}
+{"level":"error","message":"Missing or invalid DB config: port","timestamp":"2025-06-07T04:51:11.121Z"}
+{"level":"error","message":"Missing or invalid DB config: user","timestamp":"2025-06-07T04:51:41.023Z"}
+{"level":"error","message":"Error getting MySQL connection: ER_ACCESS_DENIED_ERROR - ER_ACCESS_DENIED_ERROR: Access denied for user 'osti_dev'@'localhost' (using password: YES)","timestamp":"2025-06-07T04:58:02.498Z"}
+{"level":"error","message":"Database connection error: ","timestamp":"2025-06-07T04:58:02.507Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T04:58:50.146Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T04:59:14.679Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:00:32.921Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:00:58.151Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:01:34.860Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:03:24.568Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:03:55.708Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:05:17.342Z"}
+{"level":"error","message":"Database connection failed.","timestamp":"2025-06-07T05:12:15.608Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:05:51.699Z"}
+{"level":"error","message":"Database connection error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:05:54.874Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:07:40.806Z"}
+{"level":"error","message":"Error checking customer: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:07:40.807Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:08:50.752Z"}
+{"level":"error","message":"Error checking customer: SQLITE_ERROR: no such table: customers","timestamp":"2025-06-10T03:08:50.753Z"}
+{"level":"error","message":"SQLite query error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:09:34.301Z"}
+{"level":"error","message":"Database connection error: SQLITE_ERROR: no such table: dbchecker","timestamp":"2025-06-10T03:09:38.429Z"}
+{"level":"error","message":"Query error: ER_NO_SUCH_TABLE - ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:38:31.683Z"}
+{"level":"error","message":"Error checking customer: ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:38:31.683Z"}
+{"level":"error","message":"Query error: ER_NO_SUCH_TABLE - ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:44:28.539Z"}
+{"level":"error","message":"Error checking customer: ER_NO_SUCH_TABLE: Table 'toyota.customers' doesn't exist","timestamp":"2025-06-10T03:44:28.539Z"}
